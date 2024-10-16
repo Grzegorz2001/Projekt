@@ -11,10 +11,16 @@ function NavBar() {
         setReorderOpen(!reorderOpen);
     };
 
+    const logoButton = () => {
+        window.location.href = "/";
+    };
+
     return (
         <div className="navBar">
             <div className="leftSide" id={reorderOpen ? "open" : "close"}>
-                <img src={logo}></img>
+                <button onClick={logoButton}>
+                    <img src={logo}></img>
+                </button>
                 <div className="hiddenLinks">
                     <Link to="/">Strona Główna</Link>
                     <Link to="/news">Aktualności</Link>
