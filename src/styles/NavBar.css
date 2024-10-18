@@ -14,17 +14,17 @@
     justify-content: flex-start;
 }
 
+.navBar .leftSide img {
+    width: 80px;
+}
+
 .navBar .leftSide button {
-    background-color: unset;
-    border: 0;
+    background-color: transparent;
+    border: none;
 }
 
 .navBar .leftSide button:hover {
     transform: scale(1.3);
-}
-
-.navBar .leftSide img {
-    width: 80px;
 }
 
 .navBar .rightSide {
@@ -74,7 +74,7 @@
 
 .navBar #open .hiddenLinks {
     display: inherit;
-    margin-left: 5px;
+    margin-left: 0px;
     align-items: center;
 }
 
