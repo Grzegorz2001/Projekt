@@ -27,7 +27,6 @@
 
 .footer .ourPagesLinks img {
     width: calc(100% + 2px);
-    height: calc(100% +2px);
     margin: -1px;
     object-fit: cover;
 }

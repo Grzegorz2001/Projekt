@@ -22,10 +22,18 @@ function NavBar() {
                     <img src={logo}></img>
                 </button>
                 <div className="hiddenLinks">
-                    <Link to="/">Strona Główna</Link>
-                    <Link to="/news">Aktualności</Link>
-                    <Link to="/about">O nas</Link>
-                    <Link to="/contact">Kontakt</Link>
+                    <a>
+                        <Link to="/">Strona Główna</Link>
+                    </a>
+                    <a>
+                        <Link to="/news">Aktualności</Link>
+                    </a>
+                    <a>
+                        <Link to="/about">O nas</Link>
+                    </a>
+                    <a>
+                        <Link to="/contact">Kontakt</Link>
+                    </a>
                 </div>
             </div>
             <div className="rightSide">

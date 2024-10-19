@@ -15,7 +15,7 @@
 }
 
 .navBar .leftSide img {
-    width: 80px;
+    width: 90px;
 }
 
 .navBar .leftSide button {
@@ -24,7 +24,7 @@
 }
 
 .navBar .leftSide button:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
 }
 
 .navBar .rightSide {
@@ -32,11 +32,11 @@
     height: 100%;
     display: flex;
     align-items: center;
+    text-wrap: nowrap;
     justify-content: center;
 }
 
 .navBar a {
-    display: inline-block;
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -54,15 +54,7 @@
 }
 
 .navBar .rightSide button:hover {
-    transform: scale(1.3);
-}
-
-.navBar .leftSide #open button {
-    display: none;
-}
-
-.navBar .leftSide #close button {
-    display: inherit;
+    transform: scale(1.1);
 }
 
 .navBar #open img {
@@ -78,21 +70,22 @@
     align-items: center;
 }
 
+.navBar #open .hiddenLinks a {
+    display: inline-block;
+    width: auto;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
 .navBar #close .hiddenLinks {
     display: none;
 }
 
 .navBar #open a {
     width: 100px;
-    margin: 5px;
-}
-@media only screen and (max-width: 900px) {
-    .navBar .rightSide a {
-        justify-content: flex-end;
-    }
-    .navBar .leftSide {
-        justify-content: flex-start;
-    }
+    margin: 2px;
 }
 
 @media only screen and (max-width: 600px) {
