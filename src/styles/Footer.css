@@ -21,7 +21,7 @@
     display: inline-block;
     width: auto;
     height: 4em;
-    margin: 3px;
+    margin: 8px;
     border: 1px solid transparent;
 }
 
@@ -32,11 +32,19 @@
     object-fit: cover;
 }
 
+.footer .ourPagesLinks img:hover {
+    transform: scale(1.1);
+}
+
 .footer .socialMediaLinks svg {
     color: white;
     margin: 10px;
     font-size: 40px;
     cursor: pointer;
+}
+
+.footer .socialMediaLinks svg:hover {
+    transform: scale(1.1);
 }
 
 .footer p {
