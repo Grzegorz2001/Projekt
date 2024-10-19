@@ -1,23 +1,41 @@
 .footer {
     width: 100%;
-    height: 200px;
+    height: 300px;
     background-color: #121619;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding-top: 10px;
 }
 
-.socialMedia button {
-    background-color: transparent;
-    border: none;
+.footer .ourPagesLinks {
+    display: flex;
+    margin: 1em 1em;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 25px;
+    border-bottom: 0.08em solid white;
 }
 
-.socialMedia svg {
+.footer .ourPagesLinks a {
+    display: inline-block;
+    width: auto;
+    height: 4em;
+    margin: 3px;
+    border: 1px solid transparent;
+}
+
+.footer .ourPagesLinks img {
+    width: calc(100% + 2px);
+    height: calc(100% +2px);
+    margin: -1px;
+    object-fit: cover;
+}
+
+.footer .socialMediaLinks svg {
     color: white;
-    margin: 20px;
-    font-size: 50px;
+    margin: 10px;
+    font-size: 40px;
     cursor: pointer;
 }
 
