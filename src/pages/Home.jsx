@@ -1,18 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { initialPerson } from "../helpers/UserDataList.jsx";
 import "../styles/Home.css";
 
 function Home() {
-    const initialPerson = [
-        {
-            firstName: "Grzegorz",
-            secondName: "Łapiński",
-            mail: "glapinski@warszawa.pl",
-            login: "glapinski",
-            password: "Polska!123",
-        },
-    ];
-
     return (
         <div className="homePage">
             <div className="headerContainer">
