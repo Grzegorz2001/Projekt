@@ -1,23 +1,26 @@
 .footer {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-color: #121619;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .footer .ourPagesLinks {
+    list-style-type: none;
+    padding-inline-start: 0;
     display: flex;
-    margin: 1em 1em;
+    margin: 1em;
     max-width: 100%;
     height: auto;
-    padding-bottom: 25px;
+    padding-bottom: 21px;
     border-bottom: 0.08em solid white;
 }
 
-.footer .ourPagesLinks a {
+.footer .ourPagesLinks li {
     display: inline-block;
     width: auto;
     height: 4em;
@@ -35,9 +38,17 @@
     transform: scale(1.1);
 }
 
+.footer .socialMediaLinks {
+    list-style-type: none;
+    padding-inline-start: 0;
+    display: flex;
+    margin: 5px;
+}
+
 .footer .socialMediaLinks svg {
     color: white;
-    margin: 10px;
+    margin: 5px;
+    padding: 5px;
     font-size: 40px;
     cursor: pointer;
 }
@@ -47,5 +58,5 @@
 }
 
 .footer p {
-    color: white;
+    margin-top: 5px;
 }
