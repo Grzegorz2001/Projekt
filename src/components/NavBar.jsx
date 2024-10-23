@@ -15,37 +15,50 @@ function NavBar() {
         window.location.href = "/";
     };
 
+    const pagesLinks = [
+        {
+            title: "Strona Główna",
+            path: "/",
+        },
+        {
+            title: "Aktualności",
+            path: "/news",
+        },
+        {
+            title: "O nas",
+            path: "/about",
+        },
+        {
+            title: "Kontakt",
+            path: "/contact",
+        },
+    ];
+
     return (
-        <div className="navBar">
+        <nav className="navBar">
             <div className="leftSide" id={reorderOpen ? "open" : "close"}>
                 <button onClick={logoButton}>
                     <img src={logo}></img>
                 </button>
-                <div className="hiddenLinks">
-                    <a>
-                        <Link to="/">Strona Główna</Link>
-                    </a>
-                    <a>
-                        <Link to="/news">Aktualności</Link>
-                    </a>
-                    <a>
-                        <Link to="/about">O nas</Link>
-                    </a>
-                    <a>
-                        <Link to="/contact">Kontakt</Link>
-                    </a>
-                </div>
+                <ul className="hiddenLinks">
+                    {pagesLinks.map((link, index) => (
+                        <li key={index}>
+                            <Link to={link.path}>{link.title}</Link>
+                        </li>
+                    ))}
+                </ul>
             </div>
             <div className="rightSide">
-                <Link to="/">Strona Główna</Link>
-                <Link to="/news">Aktualności</Link>
-                <Link to="/about">O nas</Link>
-                <Link to="/contact">Kontakt</Link>
+                {pagesLinks.map((link, index) => (
+                    <li key={index}>
+                        <Link to={link.path}>{link.title}</Link>
+                    </li>
+                ))}
                 <button onClick={toggleNavBar}>
                     <ReorderIcon />
                 </button>
             </div>
-        </div>
+        </nav>
     );
 }
 

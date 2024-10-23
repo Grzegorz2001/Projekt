@@ -17,7 +17,7 @@
 }
 
 .navBar .leftSide img {
-    width: 90px;
+    width: 80px;
 }
 
 .navBar .leftSide button {
@@ -30,6 +30,7 @@
 }
 
 .navBar .rightSide {
+    list-style-type: none;
     flex: 50%;
     height: 100%;
     display: flex;
@@ -68,6 +69,7 @@
 }
 
 .navBar #open .hiddenLinks {
+    list-style-type: none;
     display: inherit;
     align-items: center;
 }
@@ -109,7 +111,7 @@
         display: none;
     }
 
-    .hiddenLinks {
+    .navBar .leftSide .hiddenLinks {
         display: none;
     }
 }
