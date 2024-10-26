@@ -8,6 +8,16 @@
     flex-direction: row;
 }
 
+.navBar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.navBar a:hover {
+    color: #e01c1c;
+}
+
 .navBar .leftSide {
     flex: 50%;
     height: 100%;
@@ -39,12 +49,6 @@
     justify-content: center;
 }
 
-.navBar a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-}
-
 .navBar .rightSide button {
     background-color: transparent;
     border: none;
@@ -58,6 +62,7 @@
 
 .navBar .rightSide button:hover {
     transform: scale(1.1);
+    color: #e01c1c;
 }
 
 .navBar #open img {
