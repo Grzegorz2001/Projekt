@@ -1,12 +1,14 @@
 .footer {
+    bottom: 0;
     width: 100%;
-    height: 250px;
+    height: 240px;
     background-color: #121619;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
+    margin-top: 60px;
 }
 
 .footer .ourPagesLinks {
@@ -24,7 +26,7 @@
     display: inline-block;
     width: auto;
     height: 4em;
-    margin: 8px;
+    margin: 6px;
     border: 1px solid transparent;
 }
 
@@ -36,19 +38,20 @@
 
 .footer .ourPagesLinks img:hover {
     transform: scale(1.1);
+    transition: all 0.3s ease-out;
 }
 
 .footer .socialMediaLinks {
     list-style-type: none;
     padding-inline-start: 0;
     display: flex;
-    margin: 5px;
+    margin: 4px;
 }
 
 .footer .socialMediaLinks svg {
     color: white;
-    margin: 5px;
-    padding: 5px;
+    margin: 4px;
+    padding: 4px;
     font-size: 40px;
     cursor: pointer;
 }
@@ -56,8 +59,9 @@
 .footer .socialMediaLinks svg:hover {
     transform: scale(1.1);
     color: #e01c1c;
+    transition: all 0.3s ease-out;
 }
 
 .footer p {
-    margin-top: 5px;
+    margin-top: 3px;
 }

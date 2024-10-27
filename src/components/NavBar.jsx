@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import ReorderIcon from "@mui/icons-material/Reorder";
+import { pagesLinks } from "./NavBarItems";
 import "../styles/NavBar.css";
 
 function NavBar() {
@@ -14,25 +15,6 @@ function NavBar() {
     const logoButton = () => {
         window.location.href = "/";
     };
-
-    const pagesLinks = [
-        {
-            title: "Strona Główna",
-            path: "/",
-        },
-        {
-            title: "Aktualności",
-            path: "/news",
-        },
-        {
-            title: "O nas",
-            path: "/about",
-        },
-        {
-            title: "Kontakt",
-            path: "/contact",
-        },
-    ];
 
     return (
         <nav className="navBar">
