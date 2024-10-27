@@ -34,11 +34,11 @@
     width: calc(100% + 2px);
     margin: -1px;
     object-fit: cover;
+    transition: ease-in-out 0.3s;
 }
 
 .footer .ourPagesLinks img:hover {
     transform: scale(1.1);
-    transition: all 0.3s ease-out;
 }
 
 .footer .socialMediaLinks {
@@ -54,12 +54,12 @@
     padding: 4px;
     font-size: 40px;
     cursor: pointer;
+    transition: ease-in-out 0.3s;
 }
 
 .footer .socialMediaLinks svg:hover {
     transform: scale(1.1);
     color: #e01c1c;
-    transition: all 0.3s ease-out;
 }
 
 .footer p {

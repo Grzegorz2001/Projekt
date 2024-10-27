@@ -17,9 +17,15 @@ function Home() {
                     .filter((link) => link.flag)
                     .map((link, index) => (
                         <li key={index}>
-                            {link.image}
-                            <h2>{link.title}</h2>
-                            <p>{link.publishedDate}</p>
+                            <Link to={link.path}>
+                                {link.image}
+                                <div className="textOverlay">
+                                    <h2 className="newsTitle">{link.title}</h2>
+                                    <p className="newsDate">
+                                        {link.publishedDate}
+                                    </p>
+                                </div>
+                            </Link>
                         </li>
                     ))}
             </ul>
