@@ -16,7 +16,7 @@ function News() {
                                 <h3 className="newsDate">
                                     {link.publishedDate}
                                 </h3>
-                                <p>{link.text}</p>
+                                <p>{link.text.substring(0, 80)}...</p>
                                 <Link to={link.path} className="readMore">
                                     Czytaj więcej
                                 </Link>

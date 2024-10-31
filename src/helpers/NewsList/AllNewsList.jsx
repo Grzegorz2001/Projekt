@@ -36,7 +36,7 @@ const newsList = [
         title: "Wyjazd integracyjny",
         image: <img src={Integracja} alt="Wyjazd integracyjny" />,
         publishedDate: "20.11.2024",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mattis ac sapien in pretium. Proin eget ex sit amet ante iaculis venenatis. Donec id elit non justo feugiat tempor vel non ante. Donec in ultrices justo. Curabitur congue lacus quis.",
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam auctor sapien ante, quis maximus nibh placerat in. Proin molestie vestibulum fringilla. Fusce tincidunt mollis ante, a congue ex congue eget. Vestibulum id commodo turpis. Fusce eu diam tincidunt, ullamcorper dui auctor, tincidunt nunc. Sed lobortis vestibulum ultrices. Nam porttitor accumsan lacus ultricies vulputate. Nulla pulvinar aliquam gravida. Donec vel consectetur nulla. Nam id sagittis eros. Vivamus a ligula id libero tempus facilisis iaculis sit amet dolor. Praesent ullamcorper velit quis cursus vehicula. Sed sodales commodo lobortis. Aliquam vehicula ultricies lacus, id auctor velit placerat et. Lorem ipsum dolor sit amet.",
         flag: true,
     },
     {
