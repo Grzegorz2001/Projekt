@@ -1,4 +1,4 @@
-.home {
+.homePage {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -94,6 +94,7 @@
 .newsDate {
     font-size: 0.8em;
     margin-top: 3px;
+    color: #666666;
 }
 
 @media only screen and (max-width: 600px) {
