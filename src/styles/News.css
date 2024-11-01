@@ -10,6 +10,32 @@
 .allNewsContainer {
     list-style-type: none;
     padding: 0;
+    margin-top: 40px;
+}
+
+.allNewsContainer .addPost {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.allNewsContainer button {
+    font-size: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    background-color: #121619;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.allNewsContainer button:hover {
+    background-color: #e01c1c;
+    color: #121619;
+    transform: scale(1.1);
 }
 
 .allNewsContainer img {
