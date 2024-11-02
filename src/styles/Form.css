@@ -1,0 +1,54 @@
+.addPostForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #5c5c5c;
+    border-radius: 6px;
+    resize: none;
+}
+
+.titleInput {
+    width: 800px;
+    height: 45px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.textInput {
+    width: 800px;
+    font-size: 12px;
+    height: 150px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.publishButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.publishButton button {
+    font-size: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    background-color: #121619;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.publishButton button:hover {
+    background-color: #e01c1c;
+    color: #121619;
+    transform: scale(1.1);
+}

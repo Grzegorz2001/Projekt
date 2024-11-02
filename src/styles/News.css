@@ -38,6 +38,14 @@
     transform: scale(1.1);
 }
 
+.publishButton button:disabled {
+    cursor: not-allowed;
+    background-color: #444444;
+    color: #aaa9a9;
+    opacity: 0.6;
+    transform: none;
+}
+
 .allNewsContainer img {
     width: 160px;
     height: 160px;

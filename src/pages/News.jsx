@@ -4,23 +4,29 @@ import { allNewsList } from "../helpers/NewsList/AllNewsList.jsx";
 import Form from "../components/Form.jsx";
 import "../styles/News.css";
 
-function News() {
+const News = () => {
     const [isAddFormShown, setIsAddFormShown] = useState(false);
     const handleShowAddFormClick = () => setIsAddFormShown(true);
+
+    const [articles, setArticles] = useState(allNewsList);
+
+    const addArticle = (newArticle) => {
+        setArticles([...articles, newArticle]);
+    };
 
     return (
         <div className="newsPage">
             <ul className="allNewsContainer">
                 <div className="addPost">
                     {isAddFormShown ? (
-                        <Form />
+                        <Form addArticle={addArticle} />
                     ) : (
                         <button onClick={handleShowAddFormClick}>
                             Dodaj post
                         </button>
                     )}
                 </div>
-                {allNewsList.map((link, index) => (
+                {articles.map((link, index) => (
                     <li key={index}>
                         <div className="newsContent">
                             {link.image}
@@ -40,6 +46,6 @@ function News() {
             </ul>
         </div>
     );
-}
+};
 
 export default News;
