@@ -53,6 +53,17 @@
     margin-right: 10px;
 }
 
+.allNewsContainer .deleteButton {
+    align-self: flex-end;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.allNewsContainer .deleteButton:hover {
+    transform: scale(1.5);
+    color: #e01c1c;
+}
+
 .allNewsContainer .newsContent {
     display: flex;
     border-radius: 5px;

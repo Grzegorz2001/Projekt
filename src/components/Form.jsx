@@ -3,16 +3,18 @@ import { allNewsList } from "../helpers/NewsList/AllNewsList";
 import PropTypes from "prop-types";
 import "../styles/Form.css";
 
-const Form = ({ addArticle }) => {
+function Form({ addArticle }) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+    const [image, setImage] = useState(null);
 
-    const handlePublish = (e) => {
+    function handlePublish(e) {
         e.preventDefault();
         addArticle({ title, text });
         setTitle("");
         setText("");
-    };
+        setImage(null);
+    }
 
     return (
         <form onSubmit={handlePublish} className="addPostForm">
@@ -42,7 +44,7 @@ const Form = ({ addArticle }) => {
             </div>
         </form>
     );
-};
+}
 
 Form.propTypes = {
     addArticle: PropTypes.func.isRequired,

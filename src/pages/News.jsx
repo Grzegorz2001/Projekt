@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { allNewsList } from "../helpers/NewsList/AllNewsList.jsx";
 import Form from "../components/Form.jsx";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import "../styles/News.css";
 
 const News = () => {
@@ -13,6 +14,16 @@ const News = () => {
     const addArticle = (newArticle) => {
         setArticles([...articles, newArticle]);
     };
+
+    function handleDelete(index) {
+        const confirmDelete = window.confirm(
+            "Czy napewno chcesz trwale usunąć ten post?"
+        );
+
+        if (confirmDelete) {
+            setArticles(articles.filter((_, i) => i !== index));
+        }
+    }
 
     return (
         <div className="newsPage">
@@ -31,7 +42,11 @@ const News = () => {
                         <div className="newsContent">
                             {link.image}
                             <div className="textContent">
-                                <h1 className="newsTitle">{link.title}</h1>
+                                <DeleteForeverIcon
+                                    className="deleteButton"
+                                    onClick={() => handleDelete(index)}
+                                />
+                                <h1 className="newsTitle">{link.title} </h1>
                                 <h3 className="newsDate">
                                     {link.publishedDate}
                                 </h3>
