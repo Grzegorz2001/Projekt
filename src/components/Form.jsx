@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { allNewsList } from "../helpers/NewsList/AllNewsList";
 import PropTypes from "prop-types";
 import "../styles/Form.css";
@@ -6,18 +6,30 @@ import "../styles/Form.css";
 function Form({ addArticle }) {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState("");
 
     function handlePublish(e) {
         e.preventDefault();
-        addArticle({ title, text });
+        addArticle({
+            image,
+            title,
+            publishedDate: new Date().toLocaleDateString(),
+            text,
+        });
         setTitle("");
         setText("");
-        setImage(null);
+        setImage("");
     }
 
     return (
         <form onSubmit={handlePublish} className="addPostForm">
+            <input
+                className="imageInput"
+                value={image}
+                type="file"
+                onChange={(e) => setImage(e.target.value)}
+                placeholder="Obraz"
+            />
             <textarea
                 className="titleInput"
                 value={title}
