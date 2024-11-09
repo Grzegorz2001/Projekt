@@ -1,0 +1,41 @@
+.contactPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+        sans-serif;
+}
+
+.contactPage h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.contactPage h2 {
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.contactPage p {
+    font-size: 17px;
+    margin: 5px;
+    padding: 10px;
+}
+
+.contactPage a {
+    margin-top: 5px;
+    color: #121619;
+    text-decoration: none;
+    transition: ease-in-out 0.3s;
+}
+
+.contactPage a:hover {
+    color: #e01c1c;
+    text-decoration: underline;
+}

@@ -90,11 +90,12 @@
 
 .allNewsContainer .readMore {
     margin-top: 5px;
-    text-decoration: underline;
+    text-decoration: none;
     color: #121619;
     transition: ease-in-out 0.3s;
 }
 
 .allNewsContainer .readMore:hover {
     color: #e01c1c;
+    text-decoration: underline;
 }
