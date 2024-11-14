@@ -40,6 +40,17 @@ function News() {
         }
     };
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate();
+        const month = date.toLocaleString("pl-PL", { month: "long" });
+        const year = date.getFullYear();
+        const hours = date.getHours();
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+
+        return `${day} ${month} ${year}, ${hours}:${minutes}`;
+    };
+
     return (
         <div className="newsPage">
             <ul className="allNewsContainer">
@@ -57,7 +68,6 @@ function News() {
                         <li key={post._id}>
                             <div className="newsContent">
                                 <img
-                                    className="postImage"
                                     src={`http://localhost:5000/${post.image}`}
                                 />
                                 <div className="textContent">
@@ -67,7 +77,7 @@ function News() {
                                     />
                                     <h1 className="newsTitle">{post.title} </h1>
                                     <h3 className="newsDate">
-                                        {post.publishedDate}
+                                        {formatDate(post.publishedDate)}
                                     </h3>
                                     <p>
                                         {post.text

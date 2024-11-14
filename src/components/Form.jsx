@@ -29,7 +29,7 @@ function Form() {
             const formData = new FormData();
             formData.append("title", title);
             formData.append("image", image);
-            formData.append("publishedDate", new Date().toLocaleDateString());
+            formData.append("publishedDate", new Date());
             formData.append("text", text);
             formData.append("flag", flag);
 
@@ -96,7 +96,11 @@ function Form() {
 
             <div className="publishButton">
                 <button
-                    disabled={title.length === 0 || text.length === 0}
+                    disabled={
+                        title.length === 0 ||
+                        text.length === 0 ||
+                        image === null
+                    }
                     type="submit"
                 >
                     Opublikuj
