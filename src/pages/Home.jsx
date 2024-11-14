@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import { initialPerson } from "../helpers/FakeBackend/UserDataList.jsx";
 import { allNewsList } from "../helpers/NewsList/AllNewsList.jsx";
 import "../styles/Home.css";

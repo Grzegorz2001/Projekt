@@ -25,15 +25,20 @@ function News() {
         fetchArticles();
     }, []);
 
-    function handleDelete(index) {
+    const handleDelete = async (postID) => {
         const confirmDelete = window.confirm(
             "Czy napewno chcesz trwale usunąć ten post?"
         );
 
         if (confirmDelete) {
-            setPosts(posts.filter((_, i) => i !== index));
+            try {
+                await axios.delete(`http://localhost:5000/api/posts/${postID}`);
+                setPosts(posts.filter((post) => post._id !== postID));
+            } catch (error) {
+                console.error(error);
+            }
         }
-    }
+    };
 
     return (
         <div className="newsPage">
@@ -51,11 +56,14 @@ function News() {
                     posts.map((post) => (
                         <li key={post._id}>
                             <div className="newsContent">
-                                {post.image}
+                                <img
+                                    className="postImage"
+                                    src={`http://localhost:5000/${post.image}`}
+                                />
                                 <div className="textContent">
                                     <DeleteForeverIcon
                                         className="deleteButton"
-                                        onClick={() => handleDelete(post.id)}
+                                        onClick={() => handleDelete(post._id)}
                                     />
                                     <h1 className="newsTitle">{post.title} </h1>
                                     <h3 className="newsDate">
@@ -74,7 +82,7 @@ function News() {
                         </li>
                     ))
                 ) : (
-                    <p>Brak postów do wyświetlenia</p>
+                    <p>Trwa ładowanie postów...</p>
                 )}
             </ul>
         </div>

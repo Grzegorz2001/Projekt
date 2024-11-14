@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import PropTypes from "prop-types";
 import "../styles/Form.css";
 
 function Form() {
@@ -30,7 +29,7 @@ function Form() {
             const formData = new FormData();
             formData.append("title", title);
             formData.append("image", image);
-            formData.append("publishedDate", new Date());
+            formData.append("publishedDate", new Date().toLocaleDateString());
             formData.append("text", text);
             formData.append("flag", flag);
 
@@ -59,6 +58,7 @@ function Form() {
                 type="file"
                 onChange={handleImageChange}
                 accept="image"
+                name="image"
             />
             {imageUrl && <img src={imageUrl} alt="Podgląd" width="200" />}
 

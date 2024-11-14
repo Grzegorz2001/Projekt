@@ -46,7 +46,7 @@
     transform: none;
 }
 
-.allNewsContainer img {
+.allNewsContainer .postImage {
     width: 160px;
     height: 160px;
     border-radius: 5px;
