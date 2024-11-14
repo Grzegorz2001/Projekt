@@ -1,19 +1,38 @@
-import React from "react";
-import { allNewsList } from "../helpers/NewsList/AllNewsList.jsx";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import { formatDate } from "../helpers/formatDate.jsx";
 import "../styles/SingleNewsPage.css";
 
 function SingleNewsPage() {
     const { id } = useParams();
-    const element = allNewsList.find((elm) => elm.id === Number(id));
+    const [post, setPost] = useState(null);
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                const response = await axios.get(
+                    `http://localhost:5000/api/posts/${id}`
+                );
+                setPost(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPost();
+    }, [id]);
+
+    if (!post) {
+        return <div>Trwa ładowanie posta...</div>;
+    }
 
     return (
         <div className="newsSingleContent">
-            {element.image}
+            <img src={`http://localhost:5000/${post.image}`} />
             <div className="textSingleContent">
-                <h1 className="newsTitle">{element.title}</h1>
-                <h3 className="newsDate">{element.publishedDate}</h3>
-                <p>{element.text}</p>
+                <h1 className="newsTitle">{post.title}</h1>
+                <h3 className="newsDate">{formatDate(post.publishedDate)}</h3>
+                <p>{post.text}</p>
             </div>
         </div>
     );

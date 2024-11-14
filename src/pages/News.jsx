@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Form from "../components/Form.jsx";
 import axios from "axios";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { formatDate } from "../helpers/formatDate.jsx";
 import "../styles/News.css";
 
 function News() {
@@ -40,17 +41,6 @@ function News() {
         }
     };
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const day = date.getDate();
-        const month = date.toLocaleString("pl-PL", { month: "long" });
-        const year = date.getFullYear();
-        const hours = date.getHours();
-        const minutes = date.getMinutes().toString().padStart(2, "0");
-
-        return `${day} ${month} ${year}, ${hours}:${minutes}`;
-    };
-
     return (
         <div className="newsPage">
             <ul className="allNewsContainer">
@@ -84,7 +74,10 @@ function News() {
                                             ? post.text.substring(0, 80) + "..."
                                             : ""}
                                     </p>
-                                    <Link className="readMore">
+                                    <Link
+                                        to={`/news/${post._id}`}
+                                        className="readMore"
+                                    >
                                         Czytaj więcej
                                     </Link>
                                 </div>

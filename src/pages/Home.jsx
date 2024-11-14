@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { initialPerson } from "../helpers/FakeBackend/UserDataList.jsx";
-import { allNewsList } from "../helpers/NewsList/AllNewsList.jsx";
+import { formatDate } from "../helpers/formatDate.jsx";
 import axios from "axios";
 import "../styles/Home.css";
 
@@ -22,17 +22,6 @@ function Home() {
         fetchPosts();
     }, []);
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        const day = date.getDate();
-        const month = date.toLocaleString("pl-PL", { month: "long" });
-        const year = date.getFullYear();
-        const hours = date.getHours();
-        const minutes = date.getMinutes().toString().padStart(2, "0");
-
-        return `${day} ${month} ${year}, ${hours}:${minutes}`;
-    };
-
     return (
         <div className="homePage">
             <div className="welcomeContainer">
@@ -42,7 +31,7 @@ function Home() {
             <ul className="mainNewsContainer">
                 {posts.map((post) => (
                     <li key={post._id}>
-                        <Link to={post.path}>
+                        <Link to={`/news/${post._id}`}>
                             <img src={`http://localhost:5000/${post.image}`} />
                             <div className="textOverlay">
                                 <h2 className="newsTitle">{post.title}</h2>
