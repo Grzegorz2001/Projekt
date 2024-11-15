@@ -53,13 +53,27 @@
     margin-right: 10px;
 }
 
-.allNewsContainer .deleteButton {
+.allNewsContainer .manageButtons {
     align-self: flex-end;
     cursor: pointer;
+}
+
+.allNewsContainer .deleteButton {
+    margin: 5px;
     transition: ease-in-out 0.3s;
 }
 
 .allNewsContainer .deleteButton:hover {
+    transform: scale(1.5);
+    color: #e01c1c;
+}
+
+.allNewsContainer .editButton {
+    margin: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.allNewsContainer .editButton:hover {
     transform: scale(1.5);
     color: #e01c1c;
 }

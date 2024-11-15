@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Form from "../components/Form.jsx";
 import axios from "axios";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import { formatDate } from "../helpers/formatDate.jsx";
 import "../styles/News.css";
 
@@ -61,10 +62,15 @@ function News() {
                                     src={`http://localhost:5000/${post.image}`}
                                 />
                                 <div className="textContent">
-                                    <DeleteForeverIcon
-                                        className="deleteButton"
-                                        onClick={() => handleDelete(post._id)}
-                                    />
+                                    <div className="manageButtons">
+                                        <ModeEditIcon className="editButton" />
+                                        <DeleteForeverIcon
+                                            className="deleteButton"
+                                            onClick={() =>
+                                                handleDelete(post._id)
+                                            }
+                                        />
+                                    </div>
                                     <h1 className="newsTitle">{post.title} </h1>
                                     <h3 className="newsDate">
                                         {formatDate(post.publishedDate)}
