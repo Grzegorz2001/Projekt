@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import News from "./pages/News";
 import SingleNewsPage from "./pages/SingleNewsPage";
-import EditPost from "./components/EditForm";
+import EditPost from "./pages/EditForm";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";

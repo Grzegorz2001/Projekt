@@ -1,0 +1,75 @@
+.addPostForm {
+    margin-top: 20px;
+    margin-bottom: 109px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #5c5c5c;
+    border-radius: 6px;
+    resize: none;
+}
+
+.titleInput {
+    width: 800px;
+    height: 45px;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.textInput {
+    width: 800px;
+    font-size: 12px;
+    height: 150px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.publishButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.publishButton button {
+    font-size: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    background-color: #121619;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.publishButton button:hover {
+    background-color: #e01c1c;
+    color: #121619;
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .titleInput {
+        width: 450px;
+    }
+    .textInput {
+        width: 450px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 850px) {
+    .titleInput {
+        width: 550px;
+    }
+    .textInput {
+        width: 550px;
+    }
+}

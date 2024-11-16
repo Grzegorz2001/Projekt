@@ -19,7 +19,7 @@
     margin-top: 5px;
 }
 
-.allNewsContainer button {
+.allNewsContainer .addPostButton {
     font-size: 20px;
     margin: 10px 5px;
     text-align: center;
@@ -32,18 +32,10 @@
     transition: ease-in-out 0.3s;
 }
 
-.allNewsContainer button:hover {
+.allNewsContainer .addPostButton:hover {
     background-color: #e01c1c;
     color: #121619;
     transform: scale(1.1);
-}
-
-.publishButton button:disabled {
-    cursor: not-allowed;
-    background-color: #444444;
-    color: #aaa9a9;
-    opacity: 0.6;
-    transform: none;
 }
 
 .allNewsContainer img {
@@ -51,14 +43,20 @@
     height: 160px;
     border-radius: 5px;
     margin-right: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.allNewsContainer img:hover {
+    transform: scale(1.1);
 }
 
 .allNewsContainer .manageButtons {
-    align-self: flex-end;
+    align-self: flex-start;
     cursor: pointer;
 }
 
 .allNewsContainer .deleteButton {
+    color: #121619;
     margin: 5px;
     transition: ease-in-out 0.3s;
 }
@@ -69,6 +67,7 @@
 }
 
 .allNewsContainer .editButton {
+    color: #121619;
     margin: 5px;
     transition: ease-in-out 0.3s;
 }

@@ -49,7 +49,10 @@ function News() {
                     {isAddFormShown ? (
                         <Form />
                     ) : (
-                        <button onClick={handleShowAddFormClick}>
+                        <button
+                            onClick={handleShowAddFormClick}
+                            className="addPostButton"
+                        >
                             Dodaj post
                         </button>
                     )}
@@ -58,9 +61,11 @@ function News() {
                     posts.map((post) => (
                         <li key={post._id}>
                             <div className="newsContent">
-                                <img
-                                    src={`http://localhost:5000/${post.image}`}
-                                />
+                                <Link to={`/news/${post._id}`}>
+                                    <img
+                                        src={`http://localhost:5000/${post.image}`}
+                                    />
+                                </Link>
                                 <div className="textContent">
                                     <div className="manageButtons">
                                         <Link to={`/news/EditPost/${post._id}`}>
@@ -86,7 +91,7 @@ function News() {
                                         to={`/news/${post._id}`}
                                         className="readMore"
                                     >
-                                        Czytaj więcej
+                                        Czytaj więcej...
                                     </Link>
                                 </div>
                             </div>

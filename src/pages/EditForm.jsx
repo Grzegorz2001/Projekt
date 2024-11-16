@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "../styles/EditForm.css";
 
 function EditPost() {
     const { id } = useParams();
@@ -66,7 +67,9 @@ function EditPost() {
 
     return (
         <form onSubmit={handlePublish} className="addPostForm">
-            <label htmlFor="imageInput">Dodaj jakieś fajne foto!</label>
+            <label htmlFor="imageInput">
+                <h2>Dodaj nowe foto!</h2>
+            </label>
             <input
                 id="imageInput"
                 className="imageInput"
@@ -77,7 +80,9 @@ function EditPost() {
             />
             {imageUrl && <img src={imageUrl} alt="Podgląd" width="200" />}
 
-            <label htmlFor="postTitle">Tytuł:</label>
+            <label htmlFor="postTitle">
+                <h3>Tytuł:</h3>
+            </label>
             <textarea
                 id="postTitle"
                 className="titleInput"
@@ -88,7 +93,9 @@ function EditPost() {
                 placeholder="Tytuł"
             />
 
-            <label htmlFor="postText">Treść:</label>
+            <label htmlFor="postText">
+                <h3>Treść:</h3>
+            </label>
             <textarea
                 id="postText"
                 className="textInput"
@@ -109,8 +116,9 @@ function EditPost() {
                 Umieść na stronie głównej
             </label>
 
-            <div className="publishButton">
+            <div className="publishButtonContainer">
                 <button
+                    className="publishButton"
                     disabled={
                         title.length === 0 ||
                         text.length === 0 ||
