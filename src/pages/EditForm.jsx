@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "../styles/EditForm.css";
 
 function EditPost() {
@@ -43,6 +43,8 @@ function EditPost() {
         }
     };
 
+    const moveTo = useNavigate();
+
     const handlePublish = async (e) => {
         e.preventDefault();
         try {
@@ -56,6 +58,9 @@ function EditPost() {
             await axios.put(`http://localhost:5000/api/posts/${id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
+
+            moveTo("/news");
+            alert("Post został zaktualizowany!");
         } catch (error) {
             console.error(error);
         }

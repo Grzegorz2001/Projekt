@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import autosize from "autosize";
 import "../styles/Form.css";
 
 function Form() {
@@ -43,7 +42,9 @@ function Form() {
             setImageUrl(null);
             setText("");
             setFlag(false);
-            alert("Udało Ci się!");
+
+            window.location.reload();
+            alert("Udało Ci się! Post dodany!");
         } catch (error) {
             console.error(error);
             alert("UPS! Coś poszło nie tak, spróbuj jeszcze raz!");

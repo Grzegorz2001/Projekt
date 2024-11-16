@@ -102,6 +102,7 @@
 }
 
 .allNewsContainer .readMore {
+    font-size: 17px;
     margin-top: 5px;
     text-decoration: none;
     color: #121619;

@@ -36,6 +36,7 @@ function News() {
             try {
                 await axios.delete(`http://localhost:5000/api/posts/${postID}`);
                 setPosts(posts.filter((post) => post._id !== postID));
+                alert("Post został usunięty!");
             } catch (error) {
                 console.error(error);
             }

@@ -19,6 +19,8 @@
 .newsSingleContent .textSingleContent {
     display: flex;
     flex-direction: column;
+    text-wrap: wrap;
+    text-align: center;
     margin: 10px;
 }
 
@@ -27,5 +29,7 @@
 }
 
 .newsSingleContent .textSingleContent p {
+    white-space: pre-wrap;
+    word-break: break-all;
     font-size: 17px;
 }
