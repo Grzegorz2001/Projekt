@@ -113,3 +113,11 @@
     color: #e01c1c;
     text-decoration: underline;
 }
+
+@media only screen and (max-width: 600px) {
+    .addPost {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -52,3 +52,12 @@ textarea {
     color: #121619;
     transform: scale(1.1);
 }
+
+@media (max-width: 600px) {
+    .titleInput {
+        width: 450px;
+    }
+    .textInput {
+        width: 450px;
+    }
+}

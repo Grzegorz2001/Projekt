@@ -63,7 +63,9 @@ function News() {
                                 />
                                 <div className="textContent">
                                     <div className="manageButtons">
-                                        <ModeEditIcon className="editButton" />
+                                        <Link to={`/news/EditPost/${post._id}`}>
+                                            <ModeEditIcon className="editButton" />
+                                        </Link>
                                         <DeleteForeverIcon
                                             className="deleteButton"
                                             onClick={() =>

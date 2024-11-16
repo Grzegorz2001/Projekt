@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import autosize from "autosize";
 import "../styles/Form.css";
 
 function Form() {
