@@ -13,6 +13,28 @@
     margin-top: 40px;
 }
 
+.allNewsContainer .searchBarContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.allNewsContainer .searchBar {
+    font-size: 35px;
+    text-align: center;
+    border: 2px solid;
+    color: #121619;
+    border-radius: 25px;
+    transition: ease-in-out 0.3s;
+}
+
+.allNewsContainer .searchBar:hover {
+    transform: scale(1.1);
+}
+
+.allNewsContainer .searchBar::placeholder {
+    color: #121619;
+}
+
 .allNewsContainer .addPost {
     display: flex;
     justify-content: center;
@@ -20,13 +42,13 @@
 }
 
 .allNewsContainer .addPostButton {
-    font-size: 20px;
+    font-size: 25px;
     margin: 10px 5px;
     text-align: center;
     background-color: #121619;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     padding: 10px 30px;
     cursor: pointer;
     transition: ease-in-out 0.3s;
