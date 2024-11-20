@@ -69,7 +69,61 @@ function News() {
                         onChange={handleSearch}
                     />
                 </div>
-                {searchText.length > 0 ? (
+                <div className="addPost">
+                    {isAddFormShown ? (
+                        <Form />
+                    ) : (
+                        <button
+                            onClick={handleShowAddFormClick}
+                            className="addPostButton"
+                        >
+                            Dodaj post
+                        </button>
+                    )}
+                </div>
+                {Array.isArray(posts) &&
+                posts.length > 0 &&
+                searchText.length === 0 ? (
+                    posts.map((post) => (
+                        <li key={post._id}>
+                            <div className="newsContent">
+                                <Link to={`/news/${post._id}`}>
+                                    <img
+                                        src={`http://localhost:5000/${post.image}`}
+                                    />
+                                </Link>
+                                <div className="textContent">
+                                    <div className="manageButtons">
+                                        <Link to={`/news/EditPost/${post._id}`}>
+                                            <ModeEditIcon className="editButton" />
+                                        </Link>
+                                        <DeleteForeverIcon
+                                            className="deleteButton"
+                                            onClick={() =>
+                                                handleDelete(post._id)
+                                            }
+                                        />
+                                    </div>
+                                    <h1 className="newsTitle">{post.title} </h1>
+                                    <h3 className="newsDate">
+                                        {formatDate(post.publishedDate)}
+                                    </h3>
+                                    <p>
+                                        {post.text
+                                            ? post.text.substring(0, 80) + "..."
+                                            : ""}
+                                    </p>
+                                    <Link
+                                        to={`/news/${post._id}`}
+                                        className="readMore"
+                                    >
+                                        Czytaj więcej...
+                                    </Link>
+                                </div>
+                            </div>
+                        </li>
+                    ))
+                ) : searchText.length > 0 && filterPosts.length !== 0 ? (
                     filterPosts.map((post) => (
                         <div key={post._id}>
                             <li key={post._id}>
@@ -116,63 +170,12 @@ function News() {
                             </li>
                         </div>
                     ))
+                ) : searchText.length > 0 && filterPosts.length === 0 ? (
+                    <p className="searchError">
+                        Nie mogę znaleść tego posta. Spróbuj ponownie!
+                    </p>
                 ) : (
-                    <p></p>
-                )}
-                <div className="addPost">
-                    {isAddFormShown ? (
-                        <Form />
-                    ) : (
-                        <button
-                            onClick={handleShowAddFormClick}
-                            className="addPostButton"
-                        >
-                            Dodaj post
-                        </button>
-                    )}
-                </div>
-                {Array.isArray(posts) && posts.length > 0 ? (
-                    posts.map((post) => (
-                        <li key={post._id}>
-                            <div className="newsContent">
-                                <Link to={`/news/${post._id}`}>
-                                    <img
-                                        src={`http://localhost:5000/${post.image}`}
-                                    />
-                                </Link>
-                                <div className="textContent">
-                                    <div className="manageButtons">
-                                        <Link to={`/news/EditPost/${post._id}`}>
-                                            <ModeEditIcon className="editButton" />
-                                        </Link>
-                                        <DeleteForeverIcon
-                                            className="deleteButton"
-                                            onClick={() =>
-                                                handleDelete(post._id)
-                                            }
-                                        />
-                                    </div>
-                                    <h1 className="newsTitle">{post.title} </h1>
-                                    <h3 className="newsDate">
-                                        {formatDate(post.publishedDate)}
-                                    </h3>
-                                    <p>
-                                        {post.text
-                                            ? post.text.substring(0, 80) + "..."
-                                            : ""}
-                                    </p>
-                                    <Link
-                                        to={`/news/${post._id}`}
-                                        className="readMore"
-                                    >
-                                        Czytaj więcej...
-                                    </Link>
-                                </div>
-                            </div>
-                        </li>
-                    ))
-                ) : (
-                    <p>Trwa ładowanie postów...</p>
+                    <p className="loadingPosts">Trwa ładowanie postów...</p>
                 )}
             </ul>
         </div>

@@ -103,4 +103,33 @@
     .mainNewsContainer {
         flex-wrap: wrap;
     }
+    .mainNewsContainer img {
+        height: 250px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 750px) {
+    .mainNewsContainer {
+        flex-wrap: wrap;
+    }
+    .mainNewsContainer .newsList {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .mainNewsContainer img {
+        height: 280px;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1300px) {
+    .mainNewsContainer {
+        flex-wrap: wrap;
+    }
+    .mainNewsContainer .newsList {
+        width: 30%;
+        box-sizing: border-box;
+    }
+    .mainNewsContainer img {
+        height: 300px;
+    }
 }

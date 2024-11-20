@@ -29,19 +29,26 @@ function Home() {
                 <p>Miło Cię widzieć!</p>
             </div>
             <ul className="mainNewsContainer">
-                {posts.map((post) => (
-                    <li key={post._id}>
-                        <Link to={`/news/${post._id}`}>
-                            <img src={`http://localhost:5000/${post.image}`} />
-                            <div className="textOverlay">
-                                <h2 className="newsTitle">{post.title}</h2>
-                                <p className="newsDate">
-                                    {formatDate(post.publishedDate)}
-                                </p>
-                            </div>
-                        </Link>
-                    </li>
-                ))}
+                {Array.isArray(posts) && posts.length > 0 ? (
+                    posts.map((post) => (
+                        <li key={post._id} className="newsList">
+                            <Link to={`/news/${post._id}`}>
+                                <img
+                                    className="newsImage"
+                                    src={`http://localhost:5000/${post.image}`}
+                                />
+                                <div className="textOverlay">
+                                    <h2 className="newsTitle">{post.title}</h2>
+                                    <p className="newsDate">
+                                        {formatDate(post.publishedDate)}
+                                    </p>
+                                </div>
+                            </Link>
+                        </li>
+                    ))
+                ) : (
+                    <p></p>
+                )}
             </ul>
             <div className="latestNewsContainer"></div>
         </div>

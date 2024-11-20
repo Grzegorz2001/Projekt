@@ -103,7 +103,7 @@
     margin: 2px;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .navBar .rightSide a {
         display: none;
     }
@@ -117,7 +117,7 @@
     }
 }
 
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) {
     .navBar .rightSide button {
         display: none;
     }
