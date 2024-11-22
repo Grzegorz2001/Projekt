@@ -66,9 +66,6 @@ function Form() {
             />
             {imageUrl && <img src={imageUrl} alt="Podgląd" width="200" />}
 
-            <label htmlFor="postTitle">
-                <h3>Tytuł:</h3>
-            </label>
             <textarea
                 id="postTitle"
                 className="titleInput"
@@ -79,9 +76,6 @@ function Form() {
                 placeholder="Tytuł"
             />
 
-            <label htmlFor="postText">
-                <h3>Treść:</h3>
-            </label>
             <textarea
                 id="postText"
                 className="textInput"

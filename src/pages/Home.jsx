@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { initialPerson } from "../helpers/FakeBackend/UserDataList.jsx";
 import { formatDate } from "../helpers/formatDate.jsx";
 import axios from "axios";
+import KudosForm from "../components/KudosForm.jsx";
 import "../styles/Home.css";
 
 function Home() {
     const [posts, setPosts] = useState([]);
+    const [kudos, setKudos] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -20,6 +22,20 @@ function Home() {
             }
         };
         fetchPosts();
+    }, []);
+
+    useEffect(() => {
+        const fetchKudos = async () => {
+            try {
+                const response = await axios.get(
+                    "http://localhost:5000/api/kudos/latest"
+                );
+                setKudos(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchKudos();
     }, []);
 
     return (
@@ -50,7 +66,29 @@ function Home() {
                     <p></p>
                 )}
             </ul>
-            <div className="latestNewsContainer"></div>
+            <div className="kudosAndCalendarContainer">
+                <ul>
+                    <div className="kudosContainer">
+                        <h1>Kudosy</h1>
+                        <KudosForm />
+                        {Array.isArray(kudos) && kudos.length > 0 ? (
+                            kudos.map((kudo) => (
+                                <li key={kudo._id}>
+                                    <div className="kudosList">
+                                        <p className="kudosText">{kudo.text}</p>
+                                        <p className="kudosDate">
+                                            {formatDate(kudo.publishedDate)}
+                                        </p>
+                                    </div>
+                                </li>
+                            ))
+                        ) : (
+                            <p></p>
+                        )}
+                        <Link className="showAllKudos">Pokaż wszystkie...</Link>
+                    </div>
+                </ul>
+            </div>
         </div>
     );
 }

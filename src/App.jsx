@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Kudos from "./pages/Kudos";
 import News from "./pages/News";
 import SingleNewsPage from "./pages/SingleNewsPage";
 import EditPost from "./pages/EditForm";
@@ -16,6 +17,7 @@ function App() {
                 <NavBar />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/kudos" element={<Kudos />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/news/:id" element={<SingleNewsPage />} />
                     <Route path="/news/EditPost/:id" element={<EditPost />} />

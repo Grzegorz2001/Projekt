@@ -1,0 +1,36 @@
+.kudosPage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
+        sans-serif;
+}
+
+.allKudosContainer {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+.allKudosContainer .manageButtons {
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+.allKudosContainer .deleteButton {
+    color: #121619;
+    margin: 5px;
+    transition: ease-in-out 0.3s;
+}
+
+.allKudosContainer .deleteButton:hover {
+    transform: scale(1.5);
+    color: #e01c1c;
+}
+
+.allKudosContainer .kudosContent {
+    display: flex;
+    border-radius: 5px;
+    padding: 10px;
+}
