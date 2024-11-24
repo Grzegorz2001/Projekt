@@ -70,40 +70,39 @@ function Home() {
                 )}
             </ul>
             <div className="kudosAndCalendarContainer">
-                <ul>
-                    <div className="kudosContainer">
-                        <h1>Kudosy</h1>
-                        <div className="addKudos">
-                            {isAddFormShown ? (
-                                <KudosForm />
-                            ) : (
-                                <button
-                                    onClick={handleShowAddFormClick}
-                                    className="addKudosButton"
-                                >
-                                    Dodaj kudosa
-                                </button>
-                            )}
-                        </div>
-                        {Array.isArray(kudos) && kudos.length > 0 ? (
-                            kudos.map((kudo) => (
-                                <li key={kudo._id}>
-                                    <div className="kudosList">
-                                        <p className="kudosText">{kudo.text}</p>
-                                        <p className="kudosDate">
-                                            {formatDate(kudo.publishedDate)}
-                                        </p>
-                                    </div>
-                                </li>
-                            ))
+                <div className="kudosContainer">
+                    <h1>Kudosy</h1>
+                    <div className="addKudos">
+                        {isAddFormShown ? (
+                            <KudosForm />
                         ) : (
-                            <p></p>
+                            <button
+                                onClick={handleShowAddFormClick}
+                                className="addKudosButton"
+                            >
+                                Dodaj kudosa
+                            </button>
                         )}
-                        <Link to={`/kudos`} className="showAllKudos">
-                            Pokaż wszystkie...
-                        </Link>
                     </div>
-                </ul>
+                    {Array.isArray(kudos) && kudos.length > 0 ? (
+                        kudos.map((kudo) => (
+                            <li key={kudo._id}>
+                                <p className="kudosText">{kudo.text}</p>
+                                <p className="kudosDate">
+                                    {formatDate(kudo.publishedDate)}
+                                </p>
+                            </li>
+                        ))
+                    ) : (
+                        <p></p>
+                    )}
+                    <Link to={`/kudos`} className="showAllKudos">
+                        Pokaż wszystkie...
+                    </Link>
+                </div>
+            </div>
+            <div className="calendarContainer">
+                <div></div>
             </div>
         </div>
     );
