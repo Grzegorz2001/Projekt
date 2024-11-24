@@ -104,8 +104,19 @@ function News() {
                                             }
                                         />
                                     </div>
-                                    <h1 className="newsTitle">{post.title} </h1>
+                                    {post.eventDate ? (
+                                        <h1 className="newsTitle">
+                                            {post.title} (
+                                            {formatDate(post.eventDate)})
+                                        </h1>
+                                    ) : (
+                                        <h1 className="newsTitle">
+                                            {post.title}{" "}
+                                        </h1>
+                                    )}
+
                                     <h3 className="newsDate">
+                                        Data publikacji:{" "}
                                         {formatDate(post.publishedDate)}
                                     </h3>
                                     <p>
@@ -147,9 +158,16 @@ function News() {
                                                 }
                                             />
                                         </div>
-                                        <h1 className="newsTitle">
-                                            {post.title}{" "}
-                                        </h1>
+                                        {post.eventDate ? (
+                                            <h1 className="newsTitle">
+                                                {post.title} (
+                                                {formatDate(post.eventDate)})
+                                            </h1>
+                                        ) : (
+                                            <h1 className="newsTitle">
+                                                {post.title}{" "}
+                                            </h1>
+                                        )}
                                         <h3 className="newsDate">
                                             {formatDate(post.publishedDate)}
                                         </h3>

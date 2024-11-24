@@ -103,7 +103,8 @@
     padding-inline-start: 0;
     margin-bottom: 50px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px;
 }
 
 .kudosContainer {
@@ -112,9 +113,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
+    width: 800px;
     padding: 0;
-    margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .kudosContainer li {
@@ -176,6 +177,81 @@
     text-decoration: underline;
 }
 
+.calendarContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+    padding: 0;
+}
+
+.calendarContainer ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.calendarContainer li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 30px;
+}
+
+.calendarContainer .eventLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.calendarContainer .calendarList {
+    display: flex;
+    align-items: center;
+}
+
+.calendarContainer .calendarImage {
+    width: 120px;
+    border-radius: 10px;
+    margin-right: 10px;
+    transition: ease-in-out 0.3s;
+}
+
+.calendarContainer .calendarImage:hover {
+    transform: scale(1.05);
+}
+
+.calendarContainer .infoOverlay {
+    text-align: left;
+}
+
+.calendarContainer h1 {
+    text-align: center;
+}
+
+.calendarContainer h2 {
+    color: #e01c1c;
+}
+
+.calendarContainer h3 {
+    text-wrap: wrap;
+    word-break: break-all;
+}
+
+.calendarContainer .showAllUpcomingEvents {
+    font-size: 17px;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #121619;
+    transition: ease-in-out 0.3s;
+}
+
+.showAllUpcomingEvents:hover {
+    color: #e01c1c;
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .mainNewsContainer {
         flex-wrap: wrap;
@@ -187,11 +263,13 @@
         flex-wrap: wrap;
     }
     .kudosContainer {
-        flex-wrap: wrap;
         width: 460px;
     }
     .kudosList {
         width: 450px;
+    }
+    .calendarContainer {
+        width: 460px;
     }
 }
 
@@ -215,6 +293,9 @@
     .kudosList {
         width: 500px;
     }
+    .calendarContainer {
+        width: 510px;
+    }
 }
 
 @media (min-width: 750px) and (max-width: 1300px) {
@@ -233,9 +314,11 @@
     }
     .kudosContainer {
         width: 610px;
-        margin-left: 5px;
     }
     .kudosList {
+        width: 600px;
+    }
+    .calendarContainer {
         width: 600px;
     }
 }

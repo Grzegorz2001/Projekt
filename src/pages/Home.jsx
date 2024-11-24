@@ -12,6 +12,7 @@ function Home() {
 
     const [posts, setPosts] = useState([]);
     const [kudos, setKudos] = useState([]);
+    const [calendarEvents, setCalendarEvents] = useState([]);
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -39,6 +40,20 @@ function Home() {
             }
         };
         fetchKudos();
+    }, []);
+
+    useEffect(() => {
+        const fetchPostsForCalendar = async () => {
+            try {
+                const response = await axios.get(
+                    "http://localhost:5000/api/posts/datted"
+                );
+                setCalendarEvents(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        };
+        fetchPostsForCalendar();
     }, []);
 
     return (
@@ -100,9 +115,41 @@ function Home() {
                         Pokaż wszystkie...
                     </Link>
                 </div>
-            </div>
-            <div className="calendarContainer">
-                <div></div>
+
+                <div className="calendarContainer">
+                    <h1>Nadchodzące wydarzenia</h1>
+                    <ul>
+                        {calendarEvents.map((calendarEvent) => (
+                            <li key={calendarEvent._id}>
+                                <Link
+                                    to={`/news/${calendarEvent._id}`}
+                                    className="eventLink"
+                                >
+                                    <div className="calendarList">
+                                        <img
+                                            className="calendarImage"
+                                            src={`http://localhost:5000/${calendarEvent.image}`}
+                                        />
+                                        <div className="infoOverlay">
+                                            <h2>
+                                                {formatDate(
+                                                    calendarEvent.eventDate
+                                                )}
+                                            </h2>
+                                            <h3>{calendarEvent.title}</h3>
+                                        </div>
+                                    </div>
+                                </Link>
+                            </li>
+                        ))}
+                        <Link
+                            to={`/UpcomingEvents`}
+                            className="showAllUpcomingEvents"
+                        >
+                            Pokaż wszystkie...
+                        </Link>
+                    </ul>
+                </div>
             </div>
         </div>
     );

@@ -11,6 +11,7 @@ function EditPost() {
     const [imageUrl, setImageUrl] = useState(null);
     const [text, setText] = useState("");
     const [flag, setFlag] = useState(false);
+    const [eventDate, setEventDate] = useState("");
 
     useEffect(() => {
         const fetchPost = async () => {
@@ -22,6 +23,7 @@ function EditPost() {
                 setTitle(response.data.title);
                 setText(response.data.text);
                 setFlag(response.data.flag);
+                setEventDate(response.data.eventDate);
             } catch (error) {
                 console.error(error);
             }
@@ -54,6 +56,7 @@ function EditPost() {
             formData.append("publishedDate", new Date());
             formData.append("text", text);
             formData.append("flag", flag);
+            formData.append("eventDate", eventDate);
 
             await axios.put(`http://localhost:5000/api/posts/${id}`, formData, {
                 headers: { "Content-Type": "multipart/form-data" },
@@ -110,6 +113,15 @@ function EditPost() {
                 name="postText"
                 placeholder="Treść"
             />
+
+            <label htmlFor="eventDate">Możesz dodać datę wydarzenia</label>
+            <input
+                type="datetime-local"
+                id="eventDate"
+                name="eventDate"
+                value={eventDate}
+                onChange={(e) => setEventDate(e.target.value)}
+            ></input>
 
             <label htmlFor="flagCheck">
                 <input

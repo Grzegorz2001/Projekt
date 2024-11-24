@@ -30,7 +30,13 @@ function SingleNewsPage() {
         <div className="newsSingleContent">
             <img src={`http://localhost:5000/${post.image}`} />
             <div className="textSingleContent">
-                <h1 className="newsTitle">{post.title}</h1>
+                {post.eventDate ? (
+                    <h1 className="newsTitle">
+                        {post.title} ({formatDate(post.eventDate)})
+                    </h1>
+                ) : (
+                    <h1 className="newsTitle">{post.title} </h1>
+                )}
                 <h3 className="newsDate">{formatDate(post.publishedDate)}</h3>
                 <p>{post.text}</p>
             </div>

@@ -8,6 +8,7 @@ function Form() {
     const [imageUrl, setImageUrl] = useState(null);
     const [text, setText] = useState("");
     const [flag, setFlag] = useState(false);
+    const [eventDate, setEventDate] = useState("");
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
@@ -32,6 +33,7 @@ function Form() {
             formData.append("publishedDate", new Date());
             formData.append("text", text);
             formData.append("flag", flag);
+            formData.append("eventDate", eventDate);
 
             await axios.post("http://localhost:5000/api/posts", formData, {
                 headers: { "Content-Type": "multipart/form-data" },
@@ -85,6 +87,15 @@ function Form() {
                 name="postText"
                 placeholder="Treść"
             />
+
+            <label htmlFor="eventDate">Możesz dodać datę wydarzenia</label>
+            <input
+                type="datetime-local"
+                id="eventDate"
+                name="eventDate"
+                value={eventDate}
+                onChange={(e) => setEventDate(e.target.value)}
+            ></input>
 
             <label htmlFor="flagCheck">
                 <input
