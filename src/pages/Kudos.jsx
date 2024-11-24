@@ -46,16 +46,18 @@ function Kudos() {
                 {kudos.map((kudo) => (
                     <li key={kudo._id}>
                         <div className="kudosContent">
-                            <div className="manageButtons">
-                                <DeleteForeverIcon
-                                    className="deleteButton"
-                                    onClick={() => handleDelete(kudo._id)}
-                                />
+                            <div className="kudosFirstLine">
+                                <h3 className="kudosDate">
+                                    {formatDate(kudo.publishedDate)}
+                                </h3>
+                                <div className="manageButtons">
+                                    <DeleteForeverIcon
+                                        className="deleteButton"
+                                        onClick={() => handleDelete(kudo._id)}
+                                    />
+                                </div>
                             </div>
-                            <h3 className="kudosDate">
-                                {formatDate(kudo.publishedDate)}
-                            </h3>
-                            <p>{kudo.text}</p>
+                            <p className="textContent">{kudo.text}</p>
                         </div>
                     </li>
                 ))}

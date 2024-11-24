@@ -32,7 +32,7 @@ function KudosForm() {
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder="Napisz pochwałę..."
+                placeholder="Napisz komuś coś miłego..."
             />
             <div className="publishKudosButtonContainer">
                 <button

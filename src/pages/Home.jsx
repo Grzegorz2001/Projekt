@@ -7,6 +7,9 @@ import KudosForm from "../components/KudosForm.jsx";
 import "../styles/Home.css";
 
 function Home() {
+    const [isAddFormShown, setIsAddFormShown] = useState(false);
+    const handleShowAddFormClick = () => setIsAddFormShown(true);
+
     const [posts, setPosts] = useState([]);
     const [kudos, setKudos] = useState([]);
 
@@ -70,7 +73,18 @@ function Home() {
                 <ul>
                     <div className="kudosContainer">
                         <h1>Kudosy</h1>
-                        <KudosForm />
+                        <div className="addKudos">
+                            {isAddFormShown ? (
+                                <KudosForm />
+                            ) : (
+                                <button
+                                    onClick={handleShowAddFormClick}
+                                    className="addKudosButton"
+                                >
+                                    Dodaj kudosa
+                                </button>
+                            )}
+                        </div>
                         {Array.isArray(kudos) && kudos.length > 0 ? (
                             kudos.map((kudo) => (
                                 <li key={kudo._id}>
@@ -85,7 +99,9 @@ function Home() {
                         ) : (
                             <p></p>
                         )}
-                        <Link className="showAllKudos">Pokaż wszystkie...</Link>
+                        <Link to={`/kudos`} className="showAllKudos">
+                            Pokaż wszystkie...
+                        </Link>
                     </div>
                 </ul>
             </div>

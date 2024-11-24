@@ -107,18 +107,45 @@
 }
 
 .kudosContainer {
+    max-width: fit-content;
     list-style-type: none;
-    max-width: 40%;
-    margin: 19px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 600px;
+    border: 2px solid #121619;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.kudosContainer .addKudos {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.kudosContainer .addKudosButton {
+    font-size: 25px;
+    margin: 10px 5px;
+    text-align: center;
+    background-color: #121619;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.kudosContainer .addKudosButton:hover {
+    background-color: #e01c1c;
+    color: #121619;
+    transform: scale(1.1);
 }
 
 .kudosList {
     padding-inline-start: 0;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
     margin-top: 1rem;
     text-align: center;
@@ -159,6 +186,10 @@
     .kudosAndCalendarContainer {
         flex-wrap: wrap;
     }
+    .kudosContainer {
+        flex-wrap: wrap;
+        width: 460px;
+    }
     .kudosList {
         width: 450px;
     }
@@ -178,6 +209,9 @@
     .kudosAndCalendarContainer {
         flex-wrap: wrap;
     }
+    .kudosContainer {
+        width: 510px;
+    }
     .kudosList {
         width: 500px;
     }
@@ -196,6 +230,10 @@
     }
     .kudosAndCalendarContainer {
         flex-wrap: wrap;
+    }
+    .kudosContainer {
+        width: 610px;
+        margin-left: 5px;
     }
     .kudosList {
         width: 600px;

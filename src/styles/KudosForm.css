@@ -23,13 +23,13 @@
 }
 
 .publishKudosButton {
-    font-size: 20px;
-    margin-bottom: 5px;
+    font-size: 25px;
+    margin: 10px 5px;
     text-align: center;
     background-color: #121619;
     color: white;
     border: none;
-    border-radius: 7px;
+    border-radius: 25px;
     padding: 10px 30px;
     cursor: pointer;
     transition: ease-in-out 0.3s;
